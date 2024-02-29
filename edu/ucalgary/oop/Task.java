@@ -23,7 +23,20 @@ public class Task {
     public String getId() {
         return id;
     }
+    public String getTitle() {
+        return title;
+    }
+    public boolean isCompleted() {
+        return isCompleted;
+    }
     
+    public Task(Task input){
+        this.id = input.id;
+        this.title = input.title;
+        this.isCompleted = input.isCompleted;
+
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
