@@ -7,13 +7,18 @@ public class ToDoList implements IToDoList{
     private Stack<List<Task>> history;
 
     public ToDoList(){
-        this.tasks = new List<Task>();
+        this.tasks = new ArrayList<Task>();
         this.history = new Stack<List<Task>>();
     }
 
+    public void saveToHistory(){
+        List<Task> event = new ArrayList<Task>();
+
+        
+    }
     @Override
     public List<Task> listTasks() {
-        return tasks;
+        return this.tasks;
     }
 
     @Override
@@ -40,7 +45,7 @@ public class ToDoList implements IToDoList{
     @Override
     public void deleteTask(String id) {
 
-        saveState();
+        saveToHistory();
 
         Iterator<Task> iterator = tasks.iterator();
         if (iterator.hasNext()) {
