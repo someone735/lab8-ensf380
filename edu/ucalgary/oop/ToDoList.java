@@ -2,8 +2,6 @@ package edu.ucalgary.oop;
 
 import java.util.*;
 
-import java.util.List;
-
 public class ToDoList implements IToDoList{
     private List<Task> tasks;
     private Stack<List<Task>> history;
@@ -22,6 +20,20 @@ public class ToDoList implements IToDoList{
     public void undo() {
         if (!history.isEmpty()) {
             tasks = history.pop();
+        }
+    }
+     @Override
+    public void addTask(Task task) {
+        tasks.add(task);
+    }
+
+    @Override
+    public void completeTask(String taskId) {
+        for (Task task : tasks) {
+            if (task.getId().equals(taskId)) {
+                task.setCompleted(true);
+                break;
+            }
         }
     }
 
