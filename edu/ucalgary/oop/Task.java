@@ -34,7 +34,6 @@ public class Task {
         this.id = input.id;
         this.title = input.title;
         this.isCompleted = input.isCompleted;
-
     }
 
     @Override
