@@ -39,7 +39,7 @@ public class ToDoList implements IToDoList{
     @Override
     public void completeTask(String taskId) {
         saveToHistory();
-        for (Task task : this.tasks) {
+        for (Task task : tasks) {
             if (task.getId().equals(taskId)) {
                 task.setCompleted(true);
                 break;
@@ -61,7 +61,7 @@ public class ToDoList implements IToDoList{
 
     public void editTask(String taskId, String newTitle, boolean newStatus){
         saveToHistory();
-        for (Task task: this.tasks){
+        for (Task task: tasks){
             String checkId = task.getId();
             if (checkId == taskId){
                 task.setTitle(newTitle);
