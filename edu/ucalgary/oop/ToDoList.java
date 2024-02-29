@@ -1,8 +1,15 @@
 package edu.ucalgary.oop;
 
-import java.util.List;
+import java.util.*;
 
-public class ToDoList {
+public class ToDoList implements IToDoList{
+    private List<Task> tasks;
+    private Stack<List<Task>> history;
+
+    public ToDoList(){
+        this.tasks = new List<Task>();
+        this.history = new Stack<List<Task>>();
+    }
 
     @Override
     public List<Task> listTasks() {
@@ -32,4 +39,5 @@ public class ToDoList {
 
         }
     }
+
 }
